@@ -1,0 +1,10 @@
+/// Endpoints for {{ service.name }}
+class {{ service.name }}Urls {
+  {% for path in service.paths %}{#
+  #}{% for operation in path.operations %}{% for line in operation.summary|splitLines %}
+  /// {{ line }}{% endfor %}{% endfor %}
+  static const String {% for name in path.name|split:'.' %}{% if forloop.first %}{{ name }}{% endif %}{% endfor %} = '{{ path.path }}';
+  {% endfor %}
+
+  const {{ service.name }}Urls._();
+}

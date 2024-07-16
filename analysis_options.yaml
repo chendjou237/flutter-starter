@@ -1,0 +1,15 @@
+include: package:surf_lint_rules/analysis_options.yaml
+
+linter:
+  rules:
+    public_member_api_docs: true
+
+analyzer:
+  exclude:
+    - lib/**/*.g.dart
+    - lib/assets/**
+    - tools/bricks/**/__brick__/**
+
+dart_code_metrics:
+  extends:
+    - package:surf_dcm_presets/all.yaml
